@@ -15,14 +15,32 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
           </p>
-          <div>
+          <div class="thumbnail col-sm-12" style="margin-top: 20px; box-shadow: none;padding: 15px;">
+						<div class="col-sm-3" style="width: 200px; height: 200px;">
+							<img src="/cos/upload/${list.file_storedname }" alt="study image" width="200" height="200" /><br>
+						</div>
+						<div class="caption col-sm-9">
+							<span class="label label-default"
+								style="float: right; font-size: 110%;">D-<span id="d-day"></span></span>
+							<h3>${study.study_name }</h3>
+							<p>${study.st_code }</p>
+							<p>지역: ${study.study_region }</p>
+							<p>인원: ${teammate.size() }명</p>
+							<p>기간: ~ ${study.study_period }</p>
+							<p>팀장: ${study.u_name }</p>
+							<p>팀원 : <c:forEach var=i begin=0 end=${teammate.size()-1 } >${teammate.get(i).u_name } </c:forEach></p>
+						</div>
+					</div>
+          
+          
+          <div class="thumbnail col-sm-12" style="margin-top: 20px; box-shadow: none;padding: 15px;">
           <p><strong>다음 스터디 일정</strong></p>
           <div id="map" class="col-sm-4" style="width:350px;height:250px;"></div>
           <div class="col-sm-4">
           	<div id="study_date">날짜: ${schedule.s_date }</div>
           	<div id="study_time">시간: ${schedule.s_date }</div>
-          	<div id="study_location">장소: ${schedule.s_ }</div>
-          	<div id="study_attend">참석자: </div>
+          	<div id="study_location">장소: ${schedule.s_location }</div>
+          	<div id="study_attend">참석자: <c:forEach var=i begin=0 end=${attend.size()-1 }>${attend.get(i).u_name } </c:forEach></div>
           </div>
           </div>
    			
